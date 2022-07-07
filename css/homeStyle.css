@@ -1,0 +1,24 @@
+#profile-image {
+  cursor: initial;
+  /* width: var(--profileImageSize); */
+  /* height: var(--profileImageSize); */
+  background: linear-gradient(#ffffff, #000000);
+  background: -webkit-linear-gradient(#ffffff, #000000);
+  background: -moz-linear-gradient(#ffffff, #000000);
+  /* border: var(--borderThickness) solid var(--borderColor); */
+  /* border-radius: 200%; */
+  /* box-shadow: 0px 10px 8px var(--darkGray); */
+  display: block;
+  margin: auto;
+}
+#profile-image:hover {
+  opacity: 1;
+}
+
+#about-info {
+  color: white;
+  text-align: center;
+  text-shadow: 0 var(--textShadowDisplacement) var(--textShadowDisplacement) var(--evilDarkGray);
+  display: block;
+  margin: auto;
+}
