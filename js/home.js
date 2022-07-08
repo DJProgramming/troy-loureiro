@@ -16,17 +16,20 @@ var homeInformation = {
     email: 'troyloureiro@gmail.com',
     instagram: '@troy_loureiro',
     instagramLink: 'https://instagram.com/troy_loureiro?igshid=YmMyMTA2M2Y=',
-  }
+  },
+  copyrightInfo: "Copyright Diego Jimenez | All Rights Reserved",
 }
 
 var createHomePage = function() {
   changeTitle('Home');
   setCurrentPage('home');
   var $mainContainer = $('#main-container');
+  var $fullContainer = $('#full-container');
 
   // Table graphic
   // var $rotationContainer = $('<div class="col-12 col-m-12" id="rotation-container">').appendTo($($mainContainer));
-  var $rotationContainer = $('<div class="col-12 col-m-12" id="rotation-container">').prependTo($('body'));
+  // var $rotationContainer = $('<div class="col-12 col-m-12" id="rotation-container">').prependTo($('body'));
+  var $rotationContainer = $('<div class="col-12 col-m-12" id="rotation-container">').prependTo($($fullContainer));
   // var $tableContainer = $('<div class="col-12 col-m-12" id="table-container">').appendTo($($profileContainer));
   var $tableContainer = $('<div class="col-12 col-m-12" id="table-container">').appendTo($($rotationContainer));
   var $tableGlass = $('<div class="col-12 col-m-12" id="table-glass">').appendTo($($tableContainer));
@@ -75,10 +78,13 @@ var createHomePage = function() {
   var $aboutInfo = $(`<div class="info" id="about-info">${homeInformation.aboutInfo}</div>`).appendTo($aboutContainer);
 
   // Footer
-  var $footer = $('<footer class="col-12 col-m-12" id="footer-container">').appendTo($mainContainer);
+  // var $footer = $('<footer class="col-12 col-m-12" id="footer-container">').appendTo($mainContainer);
+  var $footer = $('<footer class="col-12 col-m-12" id="footer-container">').appendTo('body');
 
   // Contact
   var $contactContainer = $('<div class="col-12 col-m-12" id="contact-container">').appendTo($footer);
+  // var $contactImageContainer = $('<div class="col-12 col-m-12" id="contact-image-container">').appendTo($footer);
+  // var $contactImage = $('<img class="content" id="contact-image" src="./images/bar.jpg">').appendTo($contactImageContainer);
   var $contactTitle = $('<h1 class="col-12 col-m-12" id="contact-title">Contact Info</h1>').appendTo($contactContainer);
 
   // Contact info
@@ -86,4 +92,8 @@ var createHomePage = function() {
   $(`<li class="info contact-info">Phone: ${homeInformation.contactInfo.phoneNumber}</li>`).appendTo($contactInfoContainer);
   $(`<li class="info contact-info">Email: ${homeInformation.contactInfo.email}</li>`).appendTo($contactInfoContainer);
   $(`<li class="info contact-info">Instagram: <a href="${homeInformation.contactInfo.instagramLink}" target="_blank">${homeInformation.contactInfo.instagram}</a></li>`).appendTo($contactInfoContainer);
+
+  // Copyright info
+  var $copyrightContainer = $('<div class="col-12 col-m-12" id="copyright-container">').appendTo($contactContainer);
+  var $copyrightInfo = $(`<div class="info" id="copyright-info">${homeInformation.copyrightInfo}</div>`).appendTo($copyrightContainer);
 }

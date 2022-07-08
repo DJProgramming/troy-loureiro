@@ -34,7 +34,9 @@ var createNavigationBar = function() {
 }
 
 var createMainContainer = function() {
-  $('<div class="row" id="main-container">').appendTo('body');
+  var $fullContainer = $('<div id="full-container">').appendTo('body');
+  // $('<div class="row" id="main-container">').appendTo('body');
+  $('<div class="row" id="main-container">').appendTo($fullContainer);
 }
 
 var emptyMainContainer = function() {
