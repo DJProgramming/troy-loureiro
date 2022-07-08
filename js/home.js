@@ -20,6 +20,41 @@ var homeInformation = {
   copyrightInfo: "Copyright Diego Jimenez | All Rights Reserved",
 }
 
+var cocktailsInformation = [
+  {
+    name: 'Vodka',
+    image: 'lemon_drop.jpg',
+    drinks: [
+      'Lemon Drops',
+      'Martinis'
+    ]
+  },
+  {
+    name: 'Tequilla',
+    image: 'margarita.jpg',
+    drinks: [
+      'Margaritas',
+      'Palomas'
+    ]
+  },
+  {
+    name: 'Gin',
+    image: 'martini.jpg',
+    drinks: [
+      'French 75s',
+      'Martinis'
+    ]
+  },
+  {
+    name: 'Whiskey',
+    image: 'old_fashioned.jpg',
+    drinks: [
+      'Old Fashioned',
+      'Manhattans'
+    ]
+  },
+];
+
 var createHomePage = function() {
   changeTitle('Home');
   setCurrentPage('home');
@@ -63,6 +98,50 @@ var createHomePage = function() {
   var $eventTypesContainer = $('<div class="col-12 col-m-12" id="event-types-container">').appendTo($eventsContainer);
   for(var i in homeInformation.eventTypes) {
     $(`<h2 class="col-12 col-m-12 event" id="event-${i}">${homeInformation.eventTypes[i]}</h2>`).appendTo($eventTypesContainer);
+  }
+
+  // Cocktails
+  var $cocktailsContainer = $('<div class="col-12 col-m-12" id="cocktails-container">').appendTo($mainContainer);
+  var $cocktailsTitle = $('<h1 class="col-12 col-m-12" id="cocktails-title">Cocktails</h1>').appendTo($cocktailsContainer);
+
+  for(var i in cocktailsInformation) {
+    var $cocktailContainer = $(`<div class="col-12 col-m-12 cocktail-container" id="cocktail-container-${i}">`).appendTo($cocktailsContainer);
+    var $cocktailTitle;
+
+    if(i%2 === 0) {
+      $cocktailTitle = $(`<h2 class="cocktail-title" id="cocktail-title-${i}">${cocktailsInformation[i].name}</h2>`).appendTo($cocktailContainer);
+    } else {
+      $cocktailTitle = $(`<h2 class="cocktail-title-right" id="cocktail-title-${i}">${cocktailsInformation[i].name}</h2>`).appendTo($cocktailContainer);
+    }
+
+    var $imageAndListWrapper = $(`<div class="col-12 col-m-12 image-list-wrapper">`).appendTo($cocktailContainer);
+
+    if(i%2 === 0) {
+      var $cocktailImageContainer = $(`<div class="col-6 col-m-6">`).appendTo($imageAndListWrapper);
+      var $cocktailImage = $(`<img class="photo", id="cocktail-image" src="./images/drinks/${cocktailsInformation[i].image}">`).appendTo($cocktailImageContainer);
+      var $cocktailListContainer = $(`<div class="col-6 col-m-6 cocktails-list">`).appendTo($imageAndListWrapper);
+
+      for(var x in cocktailsInformation[i].drinks) {
+        $(`<h2 class="cocktail-title" id="cocktail-title-${i}">${cocktailsInformation[i].drinks[x]}</h2>`).appendTo($cocktailListContainer);
+      }
+    } else {
+      var $cocktailListContainer = $(`<div class="col-6 col-m-6 cocktails-list-right">`).appendTo($imageAndListWrapper);
+
+      for(var x in cocktailsInformation[i].drinks) {
+        $(`<h2 class="cocktail-title" id="cocktail-title-${i}">${cocktailsInformation[i].drinks[x]}</h2>`).appendTo($cocktailListContainer);
+      }
+
+      var $cocktailImageContainer = $(`<div class="col-6 col-m-6">`).appendTo($imageAndListWrapper);
+      var $cocktailImage = $(`<img class="photo", id="cocktail-image" src="./images/drinks/${cocktailsInformation[i].image}">`).appendTo($cocktailImageContainer);
+    }
+
+    // var $cocktailImageContainer = $(`<div class="col-6 col-m-6">`).appendTo($imageAndListWrapper);
+    // var $cocktailImage = $(`<img class="photo", id="cocktail-image" src="./images/drinks/${cocktailsInformation[i].image}">`).appendTo($cocktailImageContainer);
+    // var $cocktailListContainer = $(`<div class="col-6 col-m-6 cocktails-list">`).appendTo($imageAndListWrapper);
+
+    // for(var x in cocktailsInformation[i].drinks) {
+    //   $(`<h2 class="cocktail-title" id="cocktail-title-${i}">${cocktailsInformation[i].drinks[x]}</h2>`).appendTo($cocktailListContainer);
+    // }
   }
 
   // About
