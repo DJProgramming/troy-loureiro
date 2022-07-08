@@ -125,9 +125,9 @@ a:hover {
   /*margin-bottom: auto;*/
   /*box-shadow: 0px 10px 8px var(--darkGray);*/
 }
-.photo:hover {
+/* .photo:hover {
   opacity: 0.8;
-}
+} */
 
 .padded-photo-container {
   padding: 1rem
