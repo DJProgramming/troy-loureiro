@@ -19,7 +19,8 @@ var createNavigationBar = function() {
   var $topBanner = $('<div class="top-banner">').appendTo($header);
   var $navBar = $('<nav class="row">').appendTo($header);
   var $menuBar = $('<div class="col-12 menu-bar">').appendTo($navBar);
-  var $logo = $('<div class="logo">').appendTo($menuBar);
+  var $logoContainer = $('<div class="logo-container">').appendTo($menuBar);
+  var $logo = $('<img src="./images/logo.png" class="logo">').appendTo($logoContainer);
   createMenuButton('menu-bar');
   var $navigationButtons = $('<ul class="navigation-buttons" id="navigation">').appendTo($menuBar);
   for(let i of webpageControl.pages) {
@@ -28,7 +29,7 @@ var createNavigationBar = function() {
   }
   $('.hamburger').on('click', function() {
     this.classList.toggle("change");
-    $('#navigation').fadeToggle('300');
+    // $('#navigation').fadeToggle('300');
   })
 }
 
