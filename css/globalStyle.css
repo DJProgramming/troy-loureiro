@@ -55,6 +55,10 @@
 
 /* types */
 
+body, html{
+  overflow-x: hidden;
+}
+
 body {
   background: var(--backgroundColor);
   padding-bottom: 1rem;
@@ -68,12 +72,13 @@ header {
 
 h1 {
   color: var(--labelColorMain);
+  text-align: center;
 }
 
 li {
   vertical-align: sub;
   display: inline;
-  color: black;
+  /* color: black; */
   margin: 0 0 0 10px;     /* top, right, bottom, left */
   padding: 0 10px 0 0;    /* top, right, bottom, left */
   cursor: pointer;
@@ -84,7 +89,8 @@ li:hover {
 
 a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: white;
 }
 a:hover {
   color: white;
@@ -121,6 +127,10 @@ a:hover {
 }
 .photo:hover {
   opacity: 0.8;
+}
+
+.padded-photo-container {
+  padding: 1rem
 }
 
 /* For mobile phones: */
