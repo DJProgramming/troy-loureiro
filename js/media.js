@@ -4,7 +4,7 @@ var mediaInformation = {
 }
 
 var createMediaNavigation = function() {
-  var $mediaNavigation = $('<div class="row media-navigation">').appendTo($('.main-container'));
+  var $mediaNavigation = $('<div class="row media-navigation">').appendTo($('#main-container'));
   var $buttonRow = $('<div class="col-12 button-row">').appendTo($mediaNavigation);
   var $mediaToggle = $('<div class="col-4 col-m-4 media-display-button" id="media-toggle">All</div>').appendTo($buttonRow);
   var $videoToggle = $('<div class="col-4 col-m-4 media-display-button" id="video-toggle">Video</div>').appendTo($buttonRow);
@@ -31,7 +31,7 @@ var createMediaNavigation = function() {
 }
 
 var createMediaVideos = function() {
-  var $videos = $('<div class="row videos">').appendTo($('.main-container'));
+  var $videos = $('<div class="row videos">').appendTo($('#main-container'));
   var $videoRow = $('<div class="col-12 video-row">').appendTo($videos);
   for(let i in videosArray) {
     var $videoDiv = $('<div class="col-6 col-m-6 video-div">').appendTo($videoRow);
@@ -42,7 +42,7 @@ var createMediaVideos = function() {
 }
 
 var createMediaPhotos = function() {
-  var $photos = $('<div class="row photos">').appendTo($('.main-container'));
+  var $photos = $('<div class="row photos">').appendTo($('#main-container'));
 
   for(let i in photosArray) {
     if(i%3 === 0) var $photoRow = $('<div class="col-12 photo-row">').css('display', 'flex').appendTo($photos);
@@ -56,7 +56,7 @@ var createMediaPhotos = function() {
 }
 
 function createMediaViewer() {
-  var $viewer = $('<div class="viewer viewer-m">').appendTo($('.main-container'));
+  var $viewer = $('<div class="viewer viewer-m">').appendTo($('#main-container'));
   var $close = $('<div class="close">close</div>').appendTo($viewer);
   var $mediaViewer = $('<div class="photo-viewer-box">').appendTo($viewer);
   var $navButtons = $('<div class="media-nav-buttons">').appendTo($mediaViewer);

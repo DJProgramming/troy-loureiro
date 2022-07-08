@@ -23,8 +23,7 @@
   margin: 0;
   padding: 0;
 
-  z-index: 0;
-
+  -webkit-overflow-x: hidden;
   overflow-x: hidden;
 
   -webkit-box-sizing: border-box; /* Chrome/Safari */
@@ -57,7 +56,8 @@
 /* types */
 
 body {
-	background: var(--backgroundColor);
+  background: var(--backgroundColor);
+  padding-bottom: 1rem;
 }
 
 header {

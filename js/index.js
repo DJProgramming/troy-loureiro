@@ -34,11 +34,11 @@ var createNavigationBar = function() {
 }
 
 var createMainContainer = function() {
-  $('<div class="row main-container">').appendTo('body');
+  $('<div class="row" id="main-container">').appendTo('body');
 }
 
 var emptyMainContainer = function() {
-  $('.main-container').empty();
+  $('#main-container').empty();
 }
 
 var setCurrentPage = function(page) {
